@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>OCR Project</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #fff;">
+ <div>
+	<h1>img2txt OCR</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post" enctype="multipart/form-data">
+        <input type="file" name="data_file" style="width:35%; padding:15px;font-size: 20px; margin-bottom: 25px;"/>
+        
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large"style="font-size: 25px;">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
+
